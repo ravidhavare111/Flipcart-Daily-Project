@@ -17,7 +17,7 @@ public class InventoryController {
 
     @GetMapping("/hello")
     public String hello(){
-        return "All is working fine";
+        return "Good";
     }
 
 
