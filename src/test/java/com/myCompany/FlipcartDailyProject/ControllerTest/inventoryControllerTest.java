@@ -3,25 +3,18 @@ package com.myCompany.FlipcartDailyProject.ControllerTest;
 import com.myCompany.FlipcartDailyProject.controller.InventoryController;
 import com.myCompany.FlipcartDailyProject.model.Item;
 import com.myCompany.FlipcartDailyProject.service.InventoryService;
-
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 
 //@SpringBootTest
@@ -100,8 +93,8 @@ public class inventoryControllerTest {
 
         Mockito.when(inventoryService.getInventorySummary()).thenReturn(itemList);
 
-        // Act & Assert
         mock.perform(get("/inventory/Summary")
+        // Act & Assert
                         .contentType("application/json"))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].brand").value("Parle"))

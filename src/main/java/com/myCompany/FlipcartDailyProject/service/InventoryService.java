@@ -10,8 +10,6 @@ import java.util.stream.Collectors;
 public class InventoryService {
     private Map<String, Item> inventory = new HashMap<String, Item>();
 
-//    inventory.put("Amul#Milk", new Item("Amul", "Milk", 35, 2));
-
     private String getKey(String brand, String category) {
         return brand + "#" + category;
     }
@@ -34,6 +32,8 @@ public class InventoryService {
         return "Inventory added successfully";
     }
 
+
+
 //    public List<Item> searchItems(String BrandName) {
 //        List<Item> filteredItems = new ArrayList<>();
 //
@@ -54,14 +54,6 @@ public class InventoryService {
                 .sorted(Comparator.comparingInt(Item::getPrice))  // Sort by price in ascending order
                 .collect(Collectors.toList());
     }
-
-
-
-
-
-
-
-
 
 
 
